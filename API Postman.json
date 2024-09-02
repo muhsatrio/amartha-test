@@ -1,0 +1,118 @@
+{
+	"info": {
+		"_postman_id": "a7f7a7d1-5506-49f4-97a7-2dbe4b4dc743",
+		"name": "Amartha Test",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "3378477"
+	},
+	"item": [
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\": \"guest\",\n    \"password\": \"123456\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}/auth/login",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Reconciliation",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJndWVzdCIsImV4cCI6MTcyNTI3MjU4OCwidXNlcm5hbWUiOiJndWVzdCJ9.79-7JIT_7yUCQ-g5scAYGKrFw4yHKzzfxQ1w62Hs9Gs",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "transaction",
+							"type": "file",
+							"src": "/Users/muhsatrio/Documents/Projects/amartha-test/transaction.csv"
+						},
+						{
+							"key": "bank_statement",
+							"type": "file",
+							"src": "/Users/muhsatrio/Documents/Projects/amartha-test/bank_statement.csv"
+						},
+						{
+							"key": "start_date",
+							"value": "2024-09-02",
+							"type": "text"
+						},
+						{
+							"key": "end_date",
+							"value": "2024-09-03",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{host}}/reconciliation",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"reconciliation"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "host",
+			"value": "http://localhost:3000",
+			"type": "string"
+		}
+	]
+}
