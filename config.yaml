@@ -1,0 +1,10 @@
+auth:
+  signing_key: secret
+  expiry: 2 # in hours
+data_source:
+  mysql:
+    host: localhost
+    username: root
+    password: password
+    port: 3306
+    db_name: amartha_test
