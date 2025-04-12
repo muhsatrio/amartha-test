@@ -1,6 +1,3 @@
-# amartha-test
-Repository for Technical Test Amartha
-
 # How to Run
 
 1. Adjust configuration in `config.yaml`
